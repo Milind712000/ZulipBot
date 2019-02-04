@@ -1,6 +1,6 @@
 import re
 import datetime
-import pprint
+import json
 import requests as rs
 from bs4 import BeautifulSoup
 
@@ -42,5 +42,5 @@ time = datetime.datetime.now()
 scraping_time = time.strftime('%m-%d-%Y_%I:%M%p')
 name = 'contests_%s_.json'%scraping_time
 fh = open(name,'w')
-fh.write(pprint.pformat(contests))
+fh.write(json.dumps(contests))
 fh.close()
